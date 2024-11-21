@@ -8,9 +8,9 @@ install_cmd = "conan install . -c tools.system.package_manager:mode=install " \
 
 if platform.system() == "Windows":
     install_cmd += "-c tools.cmake.cmaketoolchain:system_version=10.0" # to force CMake pick a newer SDK
-elif platform.system() == "Linux":
+#elif platform.system() == "Linux":
     # affected by this: https://github.com/conan-io/conan-center-index/issues/18951
-    install_cmd += "--build=libx26* --build=openjpeg*"
+#    install_cmd += "--build=libx26* --build=openjpeg*"
     # install_cmd += "--build=libx26* -c \"libx26*:tools.build:cxxflags=+['-fno-finite-math-only']\" " \
     #                "--build=openjpeg* -c \"openjpeg*:tools.build:cxxflags=+['-fno-finite-math-only']\""
 
